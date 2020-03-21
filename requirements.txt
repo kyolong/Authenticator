@@ -1,0 +1,2 @@
+PyUserInput==0.1.11
+pyobjc-framework-Quartz==2.5.1
