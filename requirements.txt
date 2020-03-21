@@ -1,2 +1,3 @@
 PyUserInput==0.1.11
 pyobjc-framework-Quartz==2.5.1
+pyperclip==1.7.0

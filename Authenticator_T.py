@@ -8,6 +8,7 @@ import time
 from pykeyboard import PyKeyboardEvent
 import Quartz
 import time
+import pyperclip
 
 secret = "1234567890XXXXXX"
 
@@ -75,8 +76,9 @@ class Keyb(PyKeyboardEvent):
                 and not flags & Quartz.kCGEventFlagMaskControl \
                 and not flags & Quartz.kCGEventFlagMaskShift:
             if key in ktbl and '0' == ktbl[key]:
-
-                for x in totp(secret):
+                aukey = totp(secret)
+                pyperclip.copy(aukey)
+                for x in aukey:
                     str_no = ctc[x]
                     event = Quartz.CGEventCreateKeyboardEvent(None, str_no, True)
                     flags = Quartz.CGEventGetFlags(event)
